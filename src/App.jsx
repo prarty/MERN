@@ -1,5 +1,18 @@
-import React from 'react'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Home from "./pages/Home.jsx";
+import SignIn from "./pages/SignIn.jsx";
+import SignOut from "./pages/SignOut.jsx";
+import Profile from "./pages/Profile.jsx";
+import About from "./pages/About.jsx";
 
 export default function App() {
-    return <h1 className="text-blue-700">App hell0</h1>
+    return <BrowserRouter>
+        <Routes>
+            <Route path={"/"} element={<Home/>}/>
+            <Route path={"/sign-in"} element={<SignIn/>}/>
+            <Route path={"/sign-out"} element={<SignOut/>}/>
+            <Route path={"/profile"} element={<Profile/>}/>
+            <Route path={"/about"} element={<About/>}/>
+        </Routes>
+    </BrowserRouter>
 }
