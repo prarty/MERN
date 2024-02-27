@@ -1,11 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import userRoute from "./routes/user.route.js";
+import userRouter from "./routes/user.route.js";
+import authRouter from "./routes/auth.route.js";
 
 dotenv.config();
 
 const app = express();
+app.use(express.json()) //to allow json input to system
+
 mongoose.connect(process.env.MONGO_CONNECTION).then(() => {
     console.log("Connected to MongoDB")
 }).catch((err) => {
@@ -17,6 +20,7 @@ app.listen(3000, () => {
     console.log("Server running on 3000 port !!")
 })
 
-app.use("/api/users", userRoute);
+app.use("/api/user", userRouter);
+app.use("/api/auth", authRouter);
 
 
