@@ -8,7 +8,7 @@ export const signup = async (req, res, next) => {
     const user = new User({username, email, password: hashedPassword});
     try {
         await user.save();
-        res.status(201).send("User Created Successfully");
+        res.status(201).json("User Created Successfully");
     }catch (error) {
         next(error)
        // next(errorHandler(520, "Custom error msg"));
