@@ -7,7 +7,7 @@ export default function Header() {
     const {currentUser} = useSelector(state=> state.user.user);
     return (
         <header className="bg-blue-100 shadow-md">
-            <div className={"flex justify-between items-center max-w-6xl max-auto p-3"}>
+            <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
             <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
                 <span className={"text-red-500"}>Rishta</span>
                 <span className={"text-red-700"}>HumareSaath</span>
@@ -34,8 +34,6 @@ export default function Header() {
                             ) :
                             <li className={"hidden sm:inline text-slate-700 hover:underline"}>SignIn</li>
                         }
-
-
                     </Link>
                 </ul>
             </div>
